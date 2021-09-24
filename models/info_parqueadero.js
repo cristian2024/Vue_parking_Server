@@ -25,7 +25,10 @@ const Info_parqueadero_Sch = new Schema({
     },
     
     vehiculo: {
-        _id: "",
+        _id: {
+            type: mongoose.ObjectId,
+            default:""
+        },
         vehicle_type: String,
         placa: String,
         color: String,
