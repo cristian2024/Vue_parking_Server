@@ -16,7 +16,7 @@ router.post('/nueva-nota', async(req, res) => {
 });
 
 router.get('/nota/:id', async(req, res) => { 
-    const _id = req.params.id; 
+    const _id = req.params.id;
     try { 
         const notaDB = await Nota.findOne({_id}); 
         res.json(notaDB); 

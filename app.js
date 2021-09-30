@@ -60,7 +60,7 @@ app.use(cors());
 app.use(express.json());
 
 //application/x-www-form-urlencoded 
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
 //app.use(express.static(path.join(__dirname, 'public')));
 
 //Ruta
@@ -69,11 +69,12 @@ app.use(express.urlencoded({ extended: true }))
 // });
 
 app.use('/api', require('./routes/VehiculosRoutes'));
+app.use('/api', require('./routes/EntradaVehiclesRoutes'));
 
 const history = require('connect-history-api-fallback'); 
 app.use(history()); 
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Puerto
-app.set('puerto', process.env.PORT || 3001); 
+app.set('puerto', process.env.PORT || 3000); 
 app.listen(app.get('puerto'), function () { console.log('Example app listening on port'+ app.get('puerto')); });
